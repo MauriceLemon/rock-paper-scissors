@@ -1,0 +1,12 @@
+{
+  "short_name": "R-P-S",
+  "name": "Rock Paper Scissors",
+  "icons": [{
+    "src": "images/favicon-32x32.png",
+    "type": "image/png",
+    "sizes": "32x32"
+  }],
+  "start_url": "/?utm_source=homescreen",
+  "background_color": "#303855",
+  "theme_color": "#3E52A3"
+}

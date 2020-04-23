@@ -1,37 +1,88 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
-  
-  <title>Frontend Mentor | Rock, Paper, Scissors</title>
+    <link href="https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:wght@600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="sass/main.css">
+    <link rel="manifest" href="site.webmanifest">
+    <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
 
-  Score
-  Rules
+    <title>Frontend Mentor | Rock, Paper, Scissors</title>
+    <meta name="description" content="First challenge from FrontendMentor made by Maria Semionova">
 
-  You Picked
-  The House Picked
-
-  You Win
-  You Lose
-
-  Play Again
-
-  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
-  <style>
-    .attribution { font-size: 11px; text-align: center; }
-    .attribution a { color: hsl(228, 45%, 44%); }
-  </style>
 </head>
 <body>
+    <!--[if IE]>
+    <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience and security.</p>
+    <![endif]-->
 
+    <!--Score-->
+    <!--Rules-->
 
-  
-  <div class="attribution">
-    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
-    Coded by <a href="#">Your Name Here</a>.
-  </div>
+    <!--You Picked-->
+    <!--The House Picked-->
+
+    <!--You Win-->
+    <!--You Lose-->
+    <!--Play Again-->
+
+    <header class="header">
+        <div class="header__title">
+            <h1 class="heading__primary">
+                <span>Rock</span>
+                <span>Paper</span>
+                <span>Scissors</span>
+                <span>Lizard</span>
+                <span>Spock</span>
+            </h1>
+        </div>
+        <div class="header__score-box">
+            <h3 class="heading__tertiary">
+                Score
+                <span class="heading__score js-score">12</span>
+            </h3>
+        </div>
+    </header>
+
+    <main class="main" id="main">
+        <div class="main__background">
+            <img src="images/bg-pentagon.svg" alt="Pentagon Image">
+        </div>
+        <div class="circle circle--scissors circle--top">
+            <div class="circle__inner"></div>
+        </div>
+        <div class="circle circle--spock circle--left">
+            <div class="circle__inner"></div>
+        </div>
+        <div class="circle circle--paper circle--right">
+            <div class="circle__inner"></div>
+        </div>
+        <div class="circle circle--lizard circle--bottom-left">
+            <div class="circle__inner"></div>
+        </div>
+        <div class="circle circle--rock circle--bottom-right">
+            <div class="circle__inner"></div>
+        </div>
+        <a href="#popup" class="button">Rules</a>
+    </main>
+
+    <div class="attribution">
+        Challenge by <a class="attribution__link" href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>.
+        Coded by <a class="attribution__link" href="#">Maria Semionova</a>.
+    </div>
+
+    <div class="popup" id="popup">
+        <div class="popup__content">
+            <div class="popup__heading">
+                <h2 class="heading__secondary">Rules</h2>
+                <a href="#main" class="popup__close">
+                    <img src="images/icon-close.svg" alt="Icon Close Image">
+                </a>
+            </div>
+            <img src="images/image-rules-bonus.svg" alt="Rules Image" class="popup__img">
+        </div>
+    </div>
 </body>
 </html>

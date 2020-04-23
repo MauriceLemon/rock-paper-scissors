@@ -1,0 +1,182 @@
+@import "variables";
+@import "circle";
+@import "animations";
+@import "popup";
+
+//Basic Setup
+*,
+*::after,
+*::before {
+    margin: 0;
+    padding: 0;
+    box-sizing: inherit;
+}
+
+html {
+    //This defines what 1rem is. 100% = 16px (default browser value).
+    font-size: 62.5%; //1rem = 10px; 10px/16px = 62.5%
+}
+
+body {
+    box-sizing: border-box;
+
+    background-image: $color-background-gradient;
+    background-size: cover;
+    background-position: bottom;
+    background-attachment: fixed;
+    overflow-x: hidden;
+
+    font-family: 'Barlow Semi Condensed', sans-serif;
+    font-size: 1.6rem;
+    font-weight: 600;
+    line-height: 1.7;
+    color: $color-default-text;
+}
+
+//Utilities
+.u-margin-bottom-medium { margin-bottom: 4rem !important; }
+
+//Typography
+.heading{
+    &__primary {
+        text-transform: uppercase;
+        color: $color-white;
+        font-size: 2.5rem;
+        font-weight: 600;
+
+        span {
+            display: block;
+            line-height: .85;
+        }
+    }
+
+    &__secondary {
+        font-size: 3rem;
+        text-transform: uppercase;
+        color: $color-dark-text;
+        line-height: 1;
+    }
+
+    &__tertiary {
+        font-size: 1.6rem;
+        letter-spacing: 3px;
+        text-transform: uppercase;
+        color: rgba($color-score-text, .85);
+        line-height: 1;
+    }
+}
+
+//Header
+.header {
+    display: flex;
+    justify-content: space-between;
+    border: 3px solid $color-header-outline;
+    border-radius: 1.6rem;
+    width: 100%;
+    max-width: $header-width;
+    margin: 5rem auto;
+
+    animation: fadeIn 1s ease-out;
+    animation-fill-mode: backwards;
+
+    &__title {
+        padding: 1.8rem 0 1.8rem 3rem;
+        height: max-content;
+    }
+
+    &__score-box {
+        background-color: $color-white;
+        border-radius: 1rem;
+        margin: 1.8rem 2.5rem;
+        padding: 1.8rem 4.5rem;
+        text-align: center;
+
+        span {
+            display: block;
+            font-size: 6rem;
+            font-weight: 700;
+            color: rgba($color-dark-text, .85);
+            line-height: 1;
+        }
+    }
+}
+
+//Main
+.main {
+    position: relative;
+    max-width: $header-width *.65;
+    margin: 0 auto;
+    height: 60vh;
+    animation: fadeIn 1s ease-out .6s;
+    animation-fill-mode: backwards;
+
+    &__background {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+
+        img {
+            height: 40vh;
+        }
+    }
+}
+
+//Button
+.button {
+    position: fixed;
+    bottom: 3rem;
+    right: 3rem;
+
+    font-family: inherit;
+    font-size: 1.6rem;
+    font-weight: 600;
+    letter-spacing: 3px;
+    color: $color-white;
+    text-transform: uppercase;
+    text-decoration: none;
+
+    background: transparent;
+    border: 2px solid $color-header-outline;
+    border-radius: 1rem;
+    padding: 1rem 3rem;
+
+    &:hover {
+        cursor: pointer;
+        background-color: rgba($color-white, .3);
+    }
+}
+
+//Attribution
+.attribution {
+    position: fixed;
+    top: 0;
+    left: 0;
+    text-align: center;
+    font-size: 1.2rem;
+    width: 100%;
+    margin-top: 1rem;
+
+    animation: fadeIn 1s ease-out 1s;
+    animation-fill-mode: backwards;
+
+    &__link {
+        &,
+        &:link,
+        &:visited {
+            text-decoration: none;
+            color: $color-white;
+            transition: all .5s;
+        }
+
+        &:hover {
+            color: $color-link;
+        }
+
+        &:active,
+        &:focus {
+            outline: none;
+            color: $color-link;
+        }
+    }
+}

@@ -1,0 +1,147 @@
+.circle {
+    position: absolute;
+    display: inline-block;
+    height: $circle-diameter;
+    width: $circle-diameter;
+    border-radius: 100%;
+    margin: 0 auto;
+    overflow: hidden;
+    transition: transform .3s;
+    background: $color-neutral-gradient;
+    box-shadow: 0 ($circle-diameter * 0.05) 0 hsl(238, 23%, 25%),
+    0 ($circle-diameter * 0.06) ($circle-diameter * 0.03) rgba($color-black, .4);
+
+    &__inner {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        height: 78%;
+        width: 78%;
+        background: $color-light-gradient;
+        border-radius: inherit;
+        box-shadow: inset 0 ($circle-diameter * 0.05) 0 -2px $color-default-text;
+
+        &::before {
+            height: 45%;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+    }
+
+    &:hover {
+        cursor: pointer;
+        transform: translateY(-2rem);
+        box-shadow: 0 ($circle-diameter * 0.05) 0 hsl(238, 23%, 25%),
+        0 0 2rem $color-header-outline;
+
+        .circle__inner::before {
+            animation: rotate .5s infinite linear;
+        }
+    }
+
+    &--top {
+        left: 50%;
+        transform: translateX(-50%);
+
+        &:hover {
+            transform: translate(-50%, -2rem);
+        }
+    }
+
+    &--left {
+        top: 25.5%;
+    }
+
+    &--right {
+        top: 25.5%;
+        left: 68.5%;
+    }
+
+    &--bottom-left {
+        top: 66%;
+        left: 13%;
+    }
+
+    &--bottom-right {
+        top: 66%;
+        left: 55.5%;
+    }
+
+    &--rock {
+        background: $color-rock-gradient;
+        box-shadow: 0 ($circle-diameter * 0.05) 0 hsl(347, 76%, 35%),
+        0 ($circle-diameter * 0.06) ($circle-diameter * 0.03) rgba($color-black, .4);
+
+        .circle__inner::before {
+            content: url(../images/icon-rock.svg);
+        }
+
+        &:hover {
+            box-shadow: 0 ($circle-diameter * 0.05) 0 hsl(347, 76%, 35%),
+            0 0 2rem $color-rock;
+        }
+    }
+
+    &--paper {
+        background: $color-paper-gradient;
+        box-shadow: 0 ($circle-diameter * 0.05) 0 hsl(230, 66%, 47%),
+        0 ($circle-diameter * 0.06) ($circle-diameter * 0.03) rgba($color-black, .4);
+
+        .circle__inner::before {
+            content: url(../images/icon-paper.svg);
+        }
+
+        &:hover {
+            box-shadow: 0 ($circle-diameter * 0.05) 0 hsl(230, 66%, 47%),
+            0 0 2rem $color-paper;
+        }
+    }
+
+    &--scissors {
+        background: $color-scissors-gradient;
+        box-shadow: 0 ($circle-diameter * 0.05) 0 hsl(29, 72%, 45%),
+        0 ($circle-diameter * 0.06) ($circle-diameter * 0.03) rgba($color-black, .4);
+
+        .circle__inner::before {
+            content: url(../images/icon-scissors.svg);
+        }
+
+        &:hover {
+            box-shadow: 0 ($circle-diameter * 0.05) 0 hsl(29, 72%, 45%),
+            0 0 2rem $color-scissors;
+        }
+    }
+
+    &--lizard {
+        background: $color-lizard-gradient;
+        box-shadow: 0 ($circle-diameter * 0.05) 0 hsl(261, 51%, 45%),
+        0 ($circle-diameter * 0.06) ($circle-diameter * 0.03) rgba($color-black, .4);
+
+        .circle__inner::before {
+            content: url(../images/icon-lizard.svg);
+        }
+
+        &:hover {
+            box-shadow: 0 ($circle-diameter * 0.05) 0 hsl(261, 51%, 45%),
+            0 0 2rem $color-lizard;
+        }
+    }
+
+    &--spock {
+        background: $color-spock-gradient;
+        box-shadow: 0 ($circle-diameter * 0.05) 0 hsl(195, 57%, 43%),
+        0 ($circle-diameter * 0.06) ($circle-diameter * 0.03) rgba($color-black, .4);
+
+        .circle__inner::before {
+            content: url(../images/icon-spock.svg);
+        }
+
+        &:hover {
+            box-shadow: 0 ($circle-diameter * 0.05) 0 hsl(195, 57%, 43%),
+            0 0 2rem $color-spock;
+        }
+    }
+}
